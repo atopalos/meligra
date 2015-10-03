@@ -1,0 +1,64 @@
+
+@sa-height: 100px;
+
+//
+// The master ScripAuthor Selector
+//
+textarea.script-author + div.sa-master {
+
+	// Generic styling of the add button
+	.sa-btn-add {
+		color: #FFF;
+		background-color: #16A085;
+		border: none;
+
+		&:hover {
+			background-color: #1ABC9C;
+		}
+	}
+
+	.sa-strip-row {
+
+		> .sa-content {
+			padding: 5px;
+
+			.sa-strip {
+	
+				position: relative;
+				border: solid 1px #CCC;
+				border-radius: 4px;
+				height: @sa-height;
+
+				> .sa-content {
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					right: 26px;
+				}
+
+				> .sa-btn-add {
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					width: 26px;
+				}
+	
+				&.last {
+					> .sa-btn-add {
+						display: none;
+					}
+				}
+
+			}
+
+		}
+
+		> .sa-btn-add {
+			width: 100%;
+		}
+
+	}
+
+}

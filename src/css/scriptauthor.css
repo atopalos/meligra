@@ -1,0 +1,37 @@
+textarea.script-author + div.sa-master .sa-btn-add {
+  color: #FFF;
+  background-color: #16A085;
+  border: none;
+}
+textarea.script-author + div.sa-master .sa-btn-add:hover {
+  background-color: #1ABC9C;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content {
+  padding: 5px;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip {
+  position: relative;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  height: 100px;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 26px;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-btn-add {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip.last > .sa-btn-add {
+  display: none;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-btn-add {
+  width: 100%;
+}

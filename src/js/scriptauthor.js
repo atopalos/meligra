@@ -41,10 +41,11 @@
 		var strips = row.children();
 
 		// Calculate how many columns each strip will occupy
-		var cols = parseInt(12 / strips.length); 
+		var cols = 100 / strips.length; 
 
 		// Apply the appropriate class to all strips
-		strips.attr("class", "sa-strip col-xs-"+cols);
+		strips//.attr("class", "sa-strip col-xs-"+cols);
+			.css("width", cols+"%");
 
 	}
 

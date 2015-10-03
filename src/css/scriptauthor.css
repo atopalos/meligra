@@ -11,6 +11,7 @@ textarea.script-author + div.sa-master .sa-strip-row > .sa-content {
 }
 textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip {
   position: relative;
+  float: left;
   border: solid 1px #CCC;
   border-radius: 4px;
   height: 100px;

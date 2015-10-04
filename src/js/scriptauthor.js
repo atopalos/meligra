@@ -40,7 +40,7 @@
 		// Get all strips
 		var strips = row.children();
 
-		// check if we actually have any children before redistributing them
+		// Check if we actually have any children before redistributing them
 		if(strips.length > 0) {
 
 			// Calculate how many columns each strip will occupy
@@ -49,8 +49,7 @@
 			// Apply the appropriate class to all strips
 			strips//.attr("class", "sa-strip col-xs-"+cols);
 				.css("width", cols+"%");
-
-		} else { // or remove the entire row
+		} else { 
 			row.parent().remove();
 		}
 
@@ -84,10 +83,15 @@
 
 			// Get the appropriate row
 			var rowContent = dom.parent();
-			// Remove this strip panel from the row
-			dom.remove();
-			// Redistribute the panels in the row
-			this.recalculatePanelSizes( rowContent );
+
+			// Remove unless it's the last stipPanel attached to the body
+			if(!(rowContent.children().length <= 1
+				&& this.body.children().length <= 1)) {
+				// Remove this strip panel from the row
+				dom.remove();
+				// Redistribute the panels in the row
+				this.recalculatePanelSizes( rowContent );
+			}
 
 		}).bind(this));
 

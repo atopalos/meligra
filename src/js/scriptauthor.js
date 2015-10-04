@@ -92,6 +92,8 @@
 			var row = this.createStripRow();
 			// Insert panel after us
 			row.insertAfter( dom );
+			// Calculate proper initial sizes for the new row			
+			this.recalculatePanelSizes( row.children(".sa-content") );
 		}).bind(this));
 
 		// Return a new row object

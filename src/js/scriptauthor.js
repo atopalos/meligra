@@ -40,12 +40,19 @@
 		// Get all strips
 		var strips = row.children();
 
-		// Calculate how many columns each strip will occupy
-		var cols = 100 / strips.length; 
+		// check if we actually have any children before redistributing them
+		if(strips.length > 0) {
 
-		// Apply the appropriate class to all strips
-		strips//.attr("class", "sa-strip col-xs-"+cols);
-			.css("width", cols+"%");
+			// Calculate how many columns each strip will occupy
+			var cols = 100 / strips.length; 
+
+			// Apply the appropriate class to all strips
+			strips//.attr("class", "sa-strip col-xs-"+cols);
+				.css("width", cols+"%");
+
+		} else { // or remove the entire row
+			row.parent().remove();
+		}
 
 	}
 
@@ -55,7 +62,8 @@
 	ScriptAuthor.prototype.createStripPanel = function() {
 		var dom = $('<div class="sa-strip"></diV>'),
 			domContent = $('<div class="sa-content"></div>').appendTo(dom),
-			domAddBtn = $('<button class="sa-btn-add"><span class="glyphicon glyphicon-plus"></span></button>').appendTo(dom);
+			domAddBtn = $('<button class="sa-btn-add"><span class="glyphicon glyphicon-plus"></span></button>').appendTo(dom),
+			domDelBtn = $('<button class="sa-btn-del"><span class="glyphicon glyphicon-minus"></span></button>').appendTo(dom);
 
 		// Add one after
 		domAddBtn.click((function() {
@@ -67,6 +75,18 @@
 
 			// Redistribute the panels in the row
 			var rowContent = dom.parent();
+			this.recalculatePanelSizes( rowContent );
+
+		}).bind(this));
+
+		// Remove this one
+		domDelBtn.click((function() {
+
+			// Get the appropriate row
+			var rowContent = dom.parent();
+			// Remove this strip panel from the row
+			dom.remove();
+			// Redistribute the panels in the row
 			this.recalculatePanelSizes( rowContent );
 
 		}).bind(this));

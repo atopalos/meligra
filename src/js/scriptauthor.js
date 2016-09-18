@@ -56,11 +56,12 @@
 	}
 
 	/**
-	 * Creats a strip panel with a plus button
+	 * Creats a strip panel with a plus and delete buttons
 	 */
 	ScriptAuthor.prototype.createStripPanel = function() {
 		var dom = $('<div class="sa-strip"></diV>'),
 			domContent = $('<div class="sa-content"></div>').appendTo(dom),
+			domTxtArea = $('<textarea class="sa-bkgd-story-txt" placeholder="Enter the background description here..." >').appendTo(dom),
 			domAddBtn = $('<button class="sa-btn-add"><span class="glyphicon glyphicon-plus"></span></button>').appendTo(dom),
 			domDelBtn = $('<button class="sa-btn-del"><span class="glyphicon glyphicon-minus"></span></button>').appendTo(dom);
 

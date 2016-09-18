@@ -31,6 +31,13 @@ textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .
   bottom: 0;
   right: 26px;
 }
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-bkgd-story-txt {
+  position: relative;
+  float: left;
+  top: 6px;
+  left: 6px;
+  resize: none;
+}
 textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-btn-add {
   position: absolute;
   right: 0;
@@ -48,6 +55,9 @@ textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .
   height: 50px;
 }
 textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip.last > .sa-btn-add {
+  display: none;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip.last > .sa-btn-del {
   display: none;
 }
 textarea.script-author + div.sa-master .sa-strip-row > .sa-btn-add {

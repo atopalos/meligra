@@ -17,6 +17,17 @@ textarea.script-author + div.sa-master {
 		}
 	}
 
+	// Generic styling of the del button
+	.sa-btn-del {
+		color: #FFF;
+		background-color: #CC3300;
+		border: none;
+
+		&:hover {
+			background-color: #FF9999;
+		}
+	}
+
 	.sa-strip-row {
 
 		> .sa-content {
@@ -38,16 +49,38 @@ textarea.script-author + div.sa-master {
 					right: 26px;
 				}
 
+				> .sa-bkgd-story-txt {
+					position: relative;
+					float: left;
+					top: 6px;
+					left: 6px;
+					resize : none;
+				}
+
 				> .sa-btn-add {
 					position: absolute;
 					right: 0;
 					top: 0;
+					bottom: 1;
+					width: 26px;
+					height: 50px;
+				}
+
+				> .sa-btn-del {
+					position: absolute;
+					right: 0;
+					top: 1;
 					bottom: 0;
 					width: 26px;
+					height: 50px;
 				}
 	
 				&.last {
 					> .sa-btn-add {
+						display: none;
+					}
+
+					> .sa-btn-del {
 						display: none;
 					}
 				}

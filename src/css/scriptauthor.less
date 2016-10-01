@@ -1,5 +1,6 @@
 
 @sa-height: 100px;
+@sa-info-height: 80px;
 
 //
 // The master ScripAuthor Selector
@@ -28,10 +29,57 @@ textarea.script-author + div.sa-master {
 		}
 	}
 
+	.sa-body {
+		width : 100%;
+
+		.sa-general-info {
+			display : block;
+			margin-top : 10px;
+			margin-bottom : 10px;
+			width : 100%;
+		}
+
+		.sa-strip-rows-container {
+			display : block;
+			width : 100%;
+		}
+
+		clear : both;
+	}
+
+	.sa-general-info {
+
+		padding: 5px;
+		border: solid 1px #CCC;
+		border-radius: 4px;
+
+		.sa-content-info {
+
+			height: @sa-info-height;
+
+			> .sa-bkgd-story-txt {
+				display : inline-block;
+				width : 40%;
+				height : 100%;
+				resize : none;
+			}
+
+			// TODO this will be extended with a container
+			// and a button to add actors for dragging and dropping
+			// them into the strip panels
+
+			> .sa-actors-label {
+				display : inline-block;
+				width : 60%;
+			}
+
+		}
+	}
+
 	.sa-strip-row {
 
-		> .sa-content {
-			padding: 5px;
+		> .sa-content-row {
+			margin-top : 5px;
 
 			.sa-strip {
 	
@@ -91,6 +139,9 @@ textarea.script-author + div.sa-master {
 
 		> .sa-btn-add {
 			width: 100%;
+			border-radius: 4px;
+			padding : 3px;
+			margin : 5px 0px 0px 0px;
 		}
 
 	}

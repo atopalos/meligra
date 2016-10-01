@@ -14,31 +14,63 @@ textarea.script-author + div.sa-master .sa-btn-del {
 textarea.script-author + div.sa-master .sa-btn-del:hover {
   background-color: #FF9999;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content {
-  padding: 5px;
+textarea.script-author + div.sa-master .sa-body {
+  width: 100%;
+  clear: both;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip {
+textarea.script-author + div.sa-master .sa-body .sa-general-info {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+textarea.script-author + div.sa-master .sa-body .sa-strip-rows-container {
+  display: block;
+  width: 100%;
+}
+textarea.script-author + div.sa-master .sa-general-info {
+  padding: 5px;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+}
+textarea.script-author + div.sa-master .sa-general-info .sa-content-info {
+  height: 80px;
+}
+textarea.script-author + div.sa-master .sa-general-info .sa-content-info > .sa-bkgd-story-txt {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+  resize: none;
+}
+textarea.script-author + div.sa-master .sa-general-info .sa-content-info > .sa-actors-label {
+  display: inline-block;
+  width: 60%;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row {
+  margin-top: 5px;
+}
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip {
   position: relative;
   float: left;
   border: solid 1px #CCC;
   border-radius: 4px;
   height: 100px;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-content {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip > .sa-content {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   right: 26px;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-bkgd-story-txt {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip > .sa-bkgd-story-txt {
   position: relative;
   float: left;
   top: 6px;
   left: 6px;
   resize: none;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-btn-add {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip > .sa-btn-add {
   position: absolute;
   right: 0;
   top: 0;
@@ -46,7 +78,7 @@ textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .
   width: 26px;
   height: 50px;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .sa-btn-del {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip > .sa-btn-del {
   position: absolute;
   right: 0;
   top: 1;
@@ -54,12 +86,15 @@ textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip > .
   width: 26px;
   height: 50px;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip.last > .sa-btn-add {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip.last > .sa-btn-add {
   display: none;
 }
-textarea.script-author + div.sa-master .sa-strip-row > .sa-content .sa-strip.last > .sa-btn-del {
+textarea.script-author + div.sa-master .sa-strip-row > .sa-content-row .sa-strip.last > .sa-btn-del {
   display: none;
 }
 textarea.script-author + div.sa-master .sa-strip-row > .sa-btn-add {
   width: 100%;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 5px 0px 0px 0px;
 }

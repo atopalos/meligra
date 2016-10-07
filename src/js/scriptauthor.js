@@ -39,14 +39,33 @@
 	 */
 	ScriptAuthor.prototype.createGlobalPanel = function( ) {
 		var dom = $('<div class="sa-general-info"></div>'),
-			domContent = $('<div class="sa-content-info"></div>').appendTo(dom),
-			domDescription = $('<textarea class="sa-bkgd-story-txt" placeholder="Briefly describe your story here..." >').appendTo(domContent),
-			domActorsLabel = $('<b class="sa-actors-label">Actors: </b>').appendTo(domContent);
-			// TODO add here the container of the actor objects and their add button 
+			domContent = $('<div class="sa-content-info"></div>').appendTo(dom);
+			domDescription = $('<textarea class="sa-bkgd-story-txt" placeholder="Briefly describe your story here..." >').appendTo(domContent);
+			
+			this.createActorsPanel().appendTo(domContent);
 		
 		// Return a new row object
 		return dom;
 	}
+
+	/**
+	 * Creates the Actors Panel
+	 */
+	ScriptAuthor.prototype.createActorsPanel = function( ) {
+		var dom = $('<div class="sa-actors-panel"></div>'),
+			domActorsLabel = $('<b class="sa-actors-label">Active Actors </b>').appendTo(dom);
+			domActors = $('<div class="sa-actors-base"></div>').appendTo(dom);
+			domActorsToolbar = $('<div class="sa-actors-toolbar"></div>').appendTo(domActors);
+			domActorsCanvas = $('<div class="sa-actors-canvas"></div>').appendTo(domActors);
+			
+			domActor = $('<div class="sa-toolbar-icon"> <span class="glyphicon glyphicon-user"></span></div>').appendTo(domActorsToolbar);
+			domTrash = $('<div class="sa-toolbar-icon"> <span class="glyphicon glyphicon-trash"></span></div>').appendTo(domActorsToolbar);
+			// TODO add here the actors and trash drag and drop functionality 
+		
+		// Return a new row object
+		return dom;
+	}
+
 
 	/**
 	 * Recalculates all panel sizes within the speciied row

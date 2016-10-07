@@ -61,17 +61,55 @@ textarea.script-author + div.sa-master {
 				display : inline-block;
 				width : 40%;
 				height : 100%;
+				margin-bottom : 2px;
 				resize : none;
 			}
 
-			// TODO this will be extended with a container
-			// and a button to add actors for dragging and dropping
-			// them into the strip panels
+			> .sa-actors-panel {
 
-			> .sa-actors-label {
 				display : inline-block;
 				width : 60%;
+				height : 100%;
+
+				> .sa-actors-label {
+					display: block;
+					text-align: center;
+					width : 100%;
+					height : 22px;
+				}
+
+				> .sa-actors-base {
+
+					width : 100%;
+
+					> .sa-actors-toolbar {
+						display : inline-block;
+						margin: 0px 10px 4px 10px;
+
+						> .sa-toolbar-icon {
+							font-size : 100%;
+
+							> .glyphicon {
+								font-size : 148%;
+								margin : 2px;
+							}
+
+						}
+
+					}
+
+					> .sa-actors-canvas {
+						display : inline-block;
+						width : 88%;
+						height : 55px;
+						border: solid 1px #CCC;
+						border-radius: 4px;
+					}
+
+				}
 			}
+
+			
 
 		}
 	}

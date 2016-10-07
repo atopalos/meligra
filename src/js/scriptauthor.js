@@ -48,6 +48,10 @@
 		return dom;
 	}
 
+	// ScriptAuthor.prototype.drag = function(ev)  {
+	//     ev.dataTransfer.setData("text", ev.target.id);
+	// }
+
 	/**
 	 * Creates the Actors Panel
 	 */
@@ -56,12 +60,14 @@
 			domActorsLabel = $('<b class="sa-actors-label">Active Actors </b>').appendTo(dom);
 			domActors = $('<div class="sa-actors-base"></div>').appendTo(dom);
 			domActorsToolbar = $('<div class="sa-actors-toolbar"></div>').appendTo(domActors);
-			domActorsCanvas = $('<div class="sa-actors-canvas"></div>').appendTo(domActors);
+			domActorsCanvas = $('<div class="sa-actors-canvas" ondrop="drop(event)" ondragover="allowDrop(event)"></div>').appendTo(domActors);
 			
-			domActor = $('<div class="sa-toolbar-icon"> <span class="glyphicon glyphicon-user"></span></div>').appendTo(domActorsToolbar);
-			domTrash = $('<div class="sa-toolbar-icon"> <span class="glyphicon glyphicon-trash"></span></div>').appendTo(domActorsToolbar);
+			domActor = $('<div id="drag2" class="sa-toolbar-icon" draggable="true" ondragstart="drag(event)"> <span class="glyphicon glyphicon-user"></span></div>').appendTo(domActorsToolbar);
+			domTrash = $('<div class="sa-toolbar-icon"> <span class="glyphicon glyphicon-trash" ondrop="drop(event)" ondragover="allowDrop(event)"></span></div>').appendTo(domActorsToolbar);
 			// TODO add here the actors and trash drag and drop functionality 
 		
+			domScript = $('<script>function drag(ev) {ev.dataTransfer.setData("text", ev.target.id);}function allowDrop(ev) {ev.preventDefault();}function drop(ev) {ev.preventDefault();var data = ev.dataTransfer.getData("text");ev.target.appendChild(document.getElementById(data));}</script>').appendTo(dom);
+
 		// Return a new row object
 		return dom;
 	}
